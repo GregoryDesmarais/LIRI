@@ -9,8 +9,11 @@ var moment = require("moment");
 var command = process.argv[2];
 var data = process.argv.splice(3).join("+") || "";
 
+
 function updateLog(command, data) {
-    console.log(command);
+    if (command.length > 15) {
+        console.log(command);
+    }
     fs.appendFile("log.txt", `${command} ${(data) ? data : ""}\n`, function(err) {
         if (err) {
             console.log(err);
@@ -31,12 +34,12 @@ function displayTracks(items) {
         var previewLink = items[x].preview_url;
         var album = items[x].album.name;
         updateLog(`
+        Result ${parseInt(x) + 1} of ${items.length}
         --------------------------
-          Result ${parseInt(x) + 1} of ${items.length}
           Artist Name: ${artist}
           Album: ${album}
           Song Title: ${title}
-          Preview URL: ${previewLink}
+          Preview URL: ${(previewLink) ? previewLink : "None provided"}
         --------------------------
                   `);
     }
@@ -73,7 +76,7 @@ function movieInfo(title) {
     if (title === "") {
         title = "Mr. Nobody";
     }
-    var qURL = "http://www.omdbapi.com/?apikey=trilogy&t=" + title;
+    var qURL = `http://www.omdbapi.com/?apikey=${keys.omdb.key}&t=` + title;
     axios.get(qURL)
         .then(function(response) {
             if (response.data.Response === "False") {
@@ -98,7 +101,7 @@ function movieInfo(title) {
 
 function concertInfo(artist) {
     updateLog(command, data);
-    var qURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+    var qURL = `https://rest.bandsintown.com/artists/${artist}/events?app_id=${keys.bands.key}`;
     axios.get(qURL)
         .then(function(response) {
             if (typeof response.data === "string" || response.data.length === 0) {
@@ -135,14 +138,17 @@ function doTheThing() {
 function switchFunction(command) {
     switch (command) {
         case "spotify-this-song":
+            updateLog(`Searching Spotify for ${data}`);
             searchSpotify(data);
             break;
 
         case "movie-this":
+            updateLog(`Searching OMDB for ${data}`);
             movieInfo(data);
             break;
 
         case "concert-this":
+            updateLog(`Searching Bands in Town for ${data}`);
             concertInfo(data);
             break;
 
