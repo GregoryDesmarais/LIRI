@@ -31,13 +31,16 @@ I am the sole developer of this applicaiton.
 5. On the next screen, you should see your  -->
 
 ## Usage
-    To search for a song in Spotify:
+To search for a song in Spotify:
+    
     node liri spotify-this-song <song name here>
 
-    To search for concerts for an artist/band:
+To search for concerts for an artist/band:
+
     node liri concert-this <artist/band name here>
 
-    To view information about a movie:
+To view information about a movie:
+
     node liri movie-this <movie name here>
 
 ## Deployed Link
