@@ -64,6 +64,27 @@ function searchSpotify(songName) {
 }
 
 function movieInfo(title) {
+    updateLog(command, data);
+    if (title === "") {
+        title = "Mr. Nobody";
+    }
+    var qURL = "http://www.omdbapi.com/?apikey=trilogy&t=" + title;
+    axios.get(qURL)
+        .then(function(response) {
+            var movieInfo = response.data;
+            console.log(`
+  --------------------------
+    Movie Title: ${movieInfo.Title}
+    Release Year: ${movieInfo.Year}
+    IMDB Rating: ${movieInfo.imdbRating}
+    Rotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}
+    Country: ${movieInfo.Country}
+    Language: ${movieInfo.Language}
+    Plot: ${movieInfo.Plot}
+    Actors: ${movieInfo.Actors}
+  --------------------------
+  `);
+        })
 
 }
 
