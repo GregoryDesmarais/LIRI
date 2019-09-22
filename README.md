@@ -1,4 +1,4 @@
-# LIRI
+# LIRI-Bot
 
 ## Overview
 A node.js application which takes a command and input data, and outputs the information to the console, as well as log.txt.

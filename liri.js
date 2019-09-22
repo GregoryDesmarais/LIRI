@@ -10,6 +10,7 @@ var command = process.argv[2];
 var data = process.argv.splice(3).join("+") || "";
 
 function updateLog(command, data) {
+    console.log(command);
     fs.appendFile("log.txt", `${command} ${(data) ? data : ""}\n`, function(err) {
         if (err) {
             console.log(err);
@@ -20,22 +21,24 @@ function updateLog(command, data) {
 
 
 function displayTracks(items) {
+    if (items.length === 0) {
+        updateLog("Sorry, no songs were found.  Please check your spelling and try again!");
+        return;
+    }
     for (x in items) {
         var artist = items[x].artists[0].name;
         var title = items[x].name;
         var previewLink = items[x].preview_url;
         var album = items[x].album.name;
-        var output = `
-  --------------------------
-    Result ${parseInt(x) + 1} of ${items.length}
-    Artist Name: ${artist}
-    Album: ${album}
-    Song Title: ${title}
-    Preview URL: ${previewLink}
-  --------------------------
-            `;
-        console.log(output);
-        updateLog(output);
+        updateLog(`
+        --------------------------
+          Result ${parseInt(x) + 1} of ${items.length}
+          Artist Name: ${artist}
+          Album: ${album}
+          Song Title: ${title}
+          Preview URL: ${previewLink}
+        --------------------------
+                  `);
     }
 }
 
@@ -73,44 +76,46 @@ function movieInfo(title) {
     var qURL = "http://www.omdbapi.com/?apikey=trilogy&t=" + title;
     axios.get(qURL)
         .then(function(response) {
+            if (response.data.Response === "False") {
+                updateLog(response.data.Error);
+                return;
+            }
             var movieInfo = response.data;
-            var output = `
-  --------------------------
-    Movie Title: ${movieInfo.Title}
-    Release Year: ${movieInfo.Year}
-    IMDB Rating: ${movieInfo.imdbRating}
-    Rotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}
-    Country: ${movieInfo.Country}
-    Language: ${movieInfo.Language}
-    Plot: ${movieInfo.Plot}
-    Actors: ${movieInfo.Actors}
-  --------------------------
-  `;
-            console.log(output);
-            updateLog(output);
+            updateLog(`
+        --------------------------
+          Movie Title: ${movieInfo.Title}
+          Release Year: ${movieInfo.Year}
+          IMDB Rating: ${movieInfo.imdbRating}
+          Rotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}
+          Country: ${movieInfo.Country}
+          Language: ${movieInfo.Language}
+          Plot: ${movieInfo.Plot}
+          Actors: ${movieInfo.Actors}
+        --------------------------
+            `);
         })
 }
 
 function concertInfo(artist) {
-    console.log(artist)
     updateLog(command, data);
     var qURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
     axios.get(qURL)
         .then(function(response) {
+            if (typeof response.data === "string" || response.data.length === 0) {
+                updateLog("No bands by that name were found.  Please try again!");
+                return;
+            }
             for (x in response.data) {
-                // console.log(response);
                 var venueName = response.data[x].venue.name;
                 var location = `${response.data[x].venue.city}, ${response.data[x].venue.region} ${response.data[x].venue.country}`;
                 var date = moment(`${response.data[x].datetime}`).format("MM/DD/YYYY");
-                var output = `  
-  --------------------------
-    Venue: ${venueName}
-    Location: ${location}
-    Date: ${date}
-  --------------------------
-  `;
-                console.log(output);
-                updateLog(output);
+                updateLog(`  
+        --------------------------
+          Venue: ${venueName}
+          Location: ${location}
+          Date: ${date}
+        --------------------------
+                `);
             }
         })
 }
@@ -146,7 +151,7 @@ function switchFunction(command) {
             break;
 
         default:
-            console.log(`
+            updateLog(`
   --------------------------
     Application Usage:
     To search for a song in Spotify:
