@@ -45,3 +45,4 @@ You can find the repository here:
 https://github.com/GregoryDesmarais/LIRI
 
 ## Preview
+![Preview of LIRI in action!](https://github.com/GregoryDesmarais/LIRI/blob/master/liri.gif)
