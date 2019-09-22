@@ -1,14 +1,60 @@
-movie-this Independence+Day
+spotify-this-song Do+you+wanna+do+nothing+with+me
 
   --------------------------
-    Movie Title: Independence Day
-    Release Year: 1996
-    IMDB Rating: 7.0
-    Rotten Tomatoes Rating: 65%
+    Result 1 of 5
+    Artist Name: Lawrence
+    Album: Breakfast
+    Song Title: Do You Wanna Do Nothing with Me?
+    Preview URL: https://p.scdn.co/mp3-preview/88561dfd632e75f36a465e99cc16de93f15fca82?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
+  --------------------------
+             
+
+  --------------------------
+    Result 2 of 5
+    Artist Name: Lawrence
+    Album: Breakfast: Unscrambled (Acoustic Sessions)
+    Song Title: Do You Wanna Do Nothing with Me? (Live) - Acoustic
+    Preview URL: https://p.scdn.co/mp3-preview/e313efc31ae3defb2dd6d84e4b0aca55bcd86e36?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
+  --------------------------
+             
+
+  --------------------------
+    Result 5 of 5
+    Artist Name: Thunk A Cappella
+    Album: Melodious
+    Song Title: Do You Wanna Do Nothing With Me
+    Preview URL: https://p.scdn.co/mp3-preview/40ffe2aec181b1b16a13b090ae8dc2eebb9f3a1b?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
+  --------------------------
+             
+
+  --------------------------
+    Result 3 of 5
+    Artist Name: Lawrence
+    Album: Do You Wanna Do Nothing with Me?
+    Song Title: Do You Wanna Do Nothing with Me?
+    Preview URL: https://p.scdn.co/mp3-preview/88561dfd632e75f36a465e99cc16de93f15fca82?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
+  --------------------------
+             
+
+  --------------------------
+    Result 4 of 5
+    Artist Name: Lawrence
+    Album: Breakfast: Unscrambled (Acoustic Sessions)
+    Song Title: Introduction to Do You Wanna Do Nothing with Me? (Live) - Acoustic
+    Preview URL: https://p.scdn.co/mp3-preview/8a961207410412401ed6acaadeea36a214b9d5f7?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
+  --------------------------
+             
+movie-this Private+Parts
+
+  --------------------------
+    Movie Title: Private Parts
+    Release Year: 1997
+    IMDB Rating: 6.9
+    Rotten Tomatoes Rating: 67/100
     Country: USA
     Language: English
-    Plot: The aliens are coming and their goal is to invade and destroy Earth. Fighting superior technology, mankind's best weapon is the will to survive.
-    Actors: Will Smith, Bill Pullman, Jeff Goldblum, Mary McDonnell
+    Plot: The autobiographical story of Howard Stern, the radio rebel who is now also a TV personality, an author and a movie star.
+    Actors: Howard Stern, Robin Quivers, Mary McCormack, Fred Norris
   --------------------------
    
 concert-this Lawrence
@@ -21,23 +67,9 @@ concert-this Lawrence
    
   
   --------------------------
-    Venue: Daryl's House Club
-    Location: Pawling, NY United States
-    Date: 11/02/2019
-  --------------------------
-   
-  
-  --------------------------
     Venue: Garcia’s at The Capitol Theatre
     Location: Port Chester, NY United States
     Date: 11/15/2019
-  --------------------------
-   
-  
-  --------------------------
-    Venue: Tellus360
-    Location: Lancaster, PA United States
-    Date: 11/16/2019
   --------------------------
    
   
@@ -49,9 +81,9 @@ concert-this Lawrence
    
   
   --------------------------
-    Venue: Funk 'n Waffles
-    Location: Syracuse, NY United States
-    Date: 11/22/2019
+    Venue: Daryl's House Club
+    Location: Pawling, NY United States
+    Date: 11/02/2019
   --------------------------
    
   
@@ -59,6 +91,13 @@ concert-this Lawrence
     Venue: Buffalo Iron Works
     Location: Buffalo, NY United States
     Date: 11/23/2019
+  --------------------------
+   
+  
+  --------------------------
+    Venue: Tellus360
+    Location: Lancaster, PA United States
+    Date: 11/16/2019
   --------------------------
    
   
@@ -77,54 +116,15 @@ concert-this Lawrence
    
   
   --------------------------
+    Venue: Funk 'n Waffles
+    Location: Syracuse, NY United States
+    Date: 11/22/2019
+  --------------------------
+   
+  
+  --------------------------
     Venue: Rock Boat 2020
     Location: Miami, FL United States
     Date: 01/24/2020
   --------------------------
    
-spotify-this-song Do+you+wanna+do+nothing+with+me?
-
-            --------------------------
-            Result 1 of 5
-            Artist Name: Lawrence
-            Album: Breakfast
-            Song Title: Do You Wanna Do Nothing with Me?
-            Preview URL: https://p.scdn.co/mp3-preview/88561dfd632e75f36a465e99cc16de93f15fca82?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
-            --------------------------
-             
-
-            --------------------------
-            Result 2 of 5
-            Artist Name: Lawrence
-            Album: Breakfast: Unscrambled (Acoustic Sessions)
-            Song Title: Do You Wanna Do Nothing with Me? (Live) - Acoustic
-            Preview URL: https://p.scdn.co/mp3-preview/e313efc31ae3defb2dd6d84e4b0aca55bcd86e36?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
-            --------------------------
-             
-
-            --------------------------
-            Result 3 of 5
-            Artist Name: Lawrence
-            Album: Do You Wanna Do Nothing with Me?
-            Song Title: Do You Wanna Do Nothing with Me?
-            Preview URL: https://p.scdn.co/mp3-preview/88561dfd632e75f36a465e99cc16de93f15fca82?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
-            --------------------------
-             
-
-            --------------------------
-            Result 4 of 5
-            Artist Name: Lawrence
-            Album: Breakfast: Unscrambled (Acoustic Sessions)
-            Song Title: Introduction to Do You Wanna Do Nothing with Me? (Live) - Acoustic
-            Preview URL: https://p.scdn.co/mp3-preview/8a961207410412401ed6acaadeea36a214b9d5f7?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
-            --------------------------
-             
-
-            --------------------------
-            Result 5 of 5
-            Artist Name: Thunk A Cappella
-            Album: Melodious
-            Song Title: Do You Wanna Do Nothing With Me
-            Preview URL: https://p.scdn.co/mp3-preview/40ffe2aec181b1b16a13b090ae8dc2eebb9f3a1b?cid=1cf67e01adbb48b7ac7c9e5c7b3476e5
-            --------------------------
-             

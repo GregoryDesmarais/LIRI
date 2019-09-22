@@ -26,13 +26,13 @@ function displayTracks(items) {
         var previewLink = items[x].preview_url;
         var album = items[x].album.name;
         var output = `
-            --------------------------
-            Result ${parseInt(x) + 1} of ${items.length}
-            Artist Name: ${artist}
-            Album: ${album}
-            Song Title: ${title}
-            Preview URL: ${previewLink}
-            --------------------------
+  --------------------------
+    Result ${parseInt(x) + 1} of ${items.length}
+    Artist Name: ${artist}
+    Album: ${album}
+    Song Title: ${title}
+    Preview URL: ${previewLink}
+  --------------------------
             `;
         console.log(output);
         updateLog(output);
@@ -147,16 +147,18 @@ function switchFunction(command) {
 
         default:
             console.log(`
-                            Application Usage:
-                            To search for a song in Spotify:
-                            node liri.js spotify-this-song '<song name here>'
-                            
-                            To search for concerts for an artist/band:
-                            node liri.js concert-this <artist/band name here>
-                            
-                            To view information about a movie:
-                            node liri.js movie-this '<movie name here>'
-                            `);
+  --------------------------
+    Application Usage:
+    To search for a song in Spotify:
+    node liri.js spotify-this-song '<song name here>'
+    
+    To search for concerts for an artist/band:
+    node liri.js concert-this <artist/band name here>
+    
+    To view information about a movie:
+    node liri.js movie-this '<movie name here>'
+  --------------------------
+  `);
             break;
     }
 }
