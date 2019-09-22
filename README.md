@@ -1,5 +1,6 @@
 # LIRI
 
+## Overview
 A node.js application which takes a command and input data, and outputs the information to the console, as well as log.txt.
 
 LIRI can search for the following information:
@@ -7,17 +8,14 @@ LIRI can search for the following information:
 - Lookup concert venues and dates for a given band.
 - Lookup information about movies,  including plot, actors, ratings, and more!
 
-## Role 
-I am the sole developer of this applicaiton.
-
-## Overview
-I have created functions using APIs for Spotify, OMDB, and Bands in Town to retrieve requested infomation.
-
-I have also used the following node modules in order to accomplish this:
+I have used the following node modules in order to accomplish this:
 - axios
 - moment
 - node-spotify-api
 - dotenv
+
+## Role 
+I am the sole developer of this applicaiton.
 
 ## Installation
 1. Copy the contents of the repo to your local machine.
@@ -34,13 +32,13 @@ I have also used the following node modules in order to accomplish this:
 
 ## Usage
     To search for a song in Spotify:
-    node liri.js spotify-this-song <song name here>
+    node liri spotify-this-song <song name here>
 
     To search for concerts for an artist/band:
-    node liri.js concert-this <artist/band name here>
+    node liri concert-this <artist/band name here>
 
     To view information about a movie:
-    node liri.js movie-this <movie name here>
+    node liri movie-this <movie name here>
 
 ## Deployed Link
 You can find the repository here:
