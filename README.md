@@ -7,6 +7,9 @@ LIRI can search for the following information:
 - Lookup concert venues and dates for a given band.
 - Lookup information about movies,  including plot, actors, ratings, and more!
 
+## Role 
+I am the sole developer of this applicaiton.
+
 ## Overview
 I have created functions using APIs for Spotify, OMDB, and Bands in Town to retrieve requested infomation.
 
