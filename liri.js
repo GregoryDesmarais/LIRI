@@ -1,5 +1,5 @@
 require("dotenv").config();
-var keys = require("./keys.js");
+var keys = require("./assets/keys.js");
 var fs = require("fs");
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
@@ -125,7 +125,7 @@ function concertInfo(artist) {
 
 function doTheThing() {
     updateLog(command, data);
-    fs.readFile('random.txt', 'utf8', function read(err, textData) {
+    fs.readFile('assets/random.txt', 'utf8', function read(err, textData) {
         if (err) {
             throw err;
         }
