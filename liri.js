@@ -4,6 +4,7 @@ var fs = require("fs");
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
+var moment = require("moment");
 
 var command = process.argv[2];
 var data = process.argv.splice(3).join("+") || "";
@@ -60,7 +61,6 @@ function searchSpotify(songName) {
                 console.log(err);
             });
     }
-
 }
 
 function movieInfo(title) {
@@ -85,10 +85,28 @@ function movieInfo(title) {
   --------------------------
   `);
         })
-
 }
 
-
+function concertInfo(artist) {
+    updateLog(command, data);
+    var qURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+    axios.get(qURL)
+        .then(function(response) {
+            for (x in response.data) {
+                // console.log(response);
+                var venueName = response.data[x].venue.name;
+                var location = `${response.data[x].venue.city}, ${response.data[x].venue.region} ${response.data[x].venue.country}`;
+                var date = moment(`${response.data[x].datetime}`).format("MM/DD/YYYY");
+                console.log(`  
+  --------------------------
+    Venue: ${venueName}
+    Location: ${location}
+    Date: ${date}
+  --------------------------
+  `)
+            }
+        })
+}
 
 switch (command) {
     case "spotify-this-song":
@@ -97,6 +115,14 @@ switch (command) {
 
     case "movie_this":
         movieInfo(data);
+        break;
+
+    case "concert-this":
+        concertInfo(data);
+        break;
+
+    case "do-what-it-says":
+        doTheThing();
         break;
 
     default:
