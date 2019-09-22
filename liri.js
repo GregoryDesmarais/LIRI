@@ -10,7 +10,7 @@ var command = process.argv[2];
 var data = process.argv.splice(3).join("+") || "";
 
 function updateLog(command, data) {
-    fs.appendFile("log.txt", `${command} ${data}, `, function(err) {
+    fs.appendFile("log.txt", `${command} ${(data) ? data : ""}\n`, function(err) {
         if (err) {
             console.log(err);
             return;
@@ -25,7 +25,7 @@ function displayTracks(items) {
         var title = items[x].name;
         var previewLink = items[x].preview_url;
         var album = items[x].album.name;
-        console.log(`
+        var output = `
             --------------------------
             Result ${parseInt(x) + 1} of ${items.length}
             Artist Name: ${artist}
@@ -33,7 +33,9 @@ function displayTracks(items) {
             Song Title: ${title}
             Preview URL: ${previewLink}
             --------------------------
-            `)
+            `;
+        console.log(output);
+        updateLog(output);
     }
 }
 
@@ -72,7 +74,7 @@ function movieInfo(title) {
     axios.get(qURL)
         .then(function(response) {
             var movieInfo = response.data;
-            console.log(`
+            var output = `
   --------------------------
     Movie Title: ${movieInfo.Title}
     Release Year: ${movieInfo.Year}
@@ -83,11 +85,14 @@ function movieInfo(title) {
     Plot: ${movieInfo.Plot}
     Actors: ${movieInfo.Actors}
   --------------------------
-  `);
+  `;
+            console.log(output);
+            updateLog(output);
         })
 }
 
 function concertInfo(artist) {
+    console.log(artist)
     updateLog(command, data);
     var qURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
     axios.get(qURL)
@@ -97,45 +102,63 @@ function concertInfo(artist) {
                 var venueName = response.data[x].venue.name;
                 var location = `${response.data[x].venue.city}, ${response.data[x].venue.region} ${response.data[x].venue.country}`;
                 var date = moment(`${response.data[x].datetime}`).format("MM/DD/YYYY");
-                console.log(`  
+                var output = `  
   --------------------------
     Venue: ${venueName}
     Location: ${location}
     Date: ${date}
   --------------------------
-  `)
+  `;
+                console.log(output);
+                updateLog(output);
             }
         })
 }
 
-switch (command) {
-    case "spotify-this-song":
-        searchSpotify(data);
-        break;
-
-    case "movie_this":
-        movieInfo(data);
-        break;
-
-    case "concert-this":
-        concertInfo(data);
-        break;
-
-    case "do-what-it-says":
-        doTheThing();
-        break;
-
-    default:
-        console.log(`
-        Application Usage:
-        To search for a song in Spotify:
-            node liri.js spotify-this-song '<song name here>'
-        
-        To search for concerts for an artist/band:
-            node liri.js concert-this <artist/band name here>
-
-        To view information about a movie:
-            node liri.js movie-this '<movie name here>'
-            `);
-        break;
+function doTheThing() {
+    updateLog(command, data);
+    fs.readFile('random.txt', 'utf8', function read(err, textData) {
+        if (err) {
+            throw err;
+        }
+        data = textData.split(",")[1];
+        switchFunction(textData.split(",")[0].trim());
+    });
 }
+
+
+function switchFunction(command) {
+    switch (command) {
+        case "spotify-this-song":
+            searchSpotify(data);
+            break;
+
+        case "movie-this":
+            movieInfo(data);
+            break;
+
+        case "concert-this":
+            concertInfo(data);
+            break;
+
+        case "do-what-it-says":
+            doTheThing();
+            break;
+
+        default:
+            console.log(`
+                            Application Usage:
+                            To search for a song in Spotify:
+                            node liri.js spotify-this-song '<song name here>'
+                            
+                            To search for concerts for an artist/band:
+                            node liri.js concert-this <artist/band name here>
+                            
+                            To view information about a movie:
+                            node liri.js movie-this '<movie name here>'
+                            `);
+            break;
+    }
+}
+
+switchFunction(command);
